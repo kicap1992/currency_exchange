@@ -19,7 +19,7 @@ class OtherFunction {
   String timeStampConverter(int timeStamp) {
     DateTime date = DateTime.fromMillisecondsSinceEpoch(timeStamp * 1000);
     // day name, date and hours with am/pm
-    String formattedDate = DateFormat('EEEE, d MM-yyyy | HH:mm a').format(date);
+    String formattedDate = DateFormat('EE, d MM-yyyy | HH:mm a').format(date);
     return formattedDate;
   }
 }

@@ -45,23 +45,32 @@ class KonversiDialogViewModel extends CustomBaseViewModel {
             Image.asset(
               'assets/flags/${allInfoModel.alphabeticCode!.toLowerCase()}.png',
               width: 30,
+              errorBuilder: (context, error, stackTrace) {
+                return const Icon(
+                  Icons.error,
+                  color: redColor,
+                );
+              },
             ),
             const SizedBox(width: 15),
-            RichText(
-                text: TextSpan(
-              text: allInfoModel.entity,
-              style: regularTextStyle.copyWith(
-                color: greenColor,
-              ),
-              children: [
-                TextSpan(
-                  text: ' (${allInfoModel.alphabeticCode})',
-                  style: italicTextStyle.copyWith(
-                    color: greenColor,
-                  ),
-                ),
-              ],
-            )),
+            Expanded(
+              child: RichText(
+                  overflow: TextOverflow.ellipsis,
+                  text: TextSpan(
+                    text: allInfoModel.entity,
+                    style: regularTextStyle.copyWith(
+                      color: greenColor,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: ' (${allInfoModel.alphabeticCode})',
+                        style: italicTextStyle.copyWith(
+                          color: greenColor,
+                        ),
+                      ),
+                    ],
+                  )),
+            ),
           ],
         );
       } else {
@@ -74,34 +83,35 @@ class KonversiDialogViewModel extends CustomBaseViewModel {
         // hintText = 'Tukaran ${allInfoModel.alphabeticCode}';
         konversiWidget = Row(
           children: [
-            res.data == 'all'
-                ? const Icon(
-                    Icons.all_inclusive,
-                    color: redColor,
-                  )
-                : Image.asset(
-                    'assets/flags/${allInfoModel!.alphabeticCode!.toLowerCase()}.png',
-                    width: 30,
-                  ),
+            Image.asset(
+              'assets/flags/${allInfoModel!.alphabeticCode!.toLowerCase()}.png',
+              width: 30,
+              errorBuilder: (context, error, stackTrace) {
+                return const Icon(
+                  Icons.error,
+                  color: redColor,
+                );
+              },
+            ),
             const SizedBox(width: 15),
-            RichText(
-                text: TextSpan(
-              text:
-                  res.data == 'all' ? 'Semua Mata Uang' : allInfoModel!.entity,
-              style: regularTextStyle.copyWith(
-                color: redColor,
-              ),
-              children: [
-                TextSpan(
-                  text: res.data == 'all'
-                      ? '*'
-                      : ' (${allInfoModel!.alphabeticCode})',
-                  style: italicTextStyle.copyWith(
-                    color: redColor,
-                  ),
-                ),
-              ],
-            )),
+            Expanded(
+              child: RichText(
+                  overflow: TextOverflow.ellipsis,
+                  text: TextSpan(
+                    text: allInfoModel.entity,
+                    style: regularTextStyle.copyWith(
+                      color: greenColor,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: ' (${allInfoModel.alphabeticCode})',
+                        style: italicTextStyle.copyWith(
+                          color: greenColor,
+                        ),
+                      ),
+                    ],
+                  )),
+            ),
           ],
         );
       }
