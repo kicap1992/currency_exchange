@@ -45,4 +45,6 @@ app.*.map.json
 
 # .env file
 .env
+.gitignore
+
 

@@ -1,8 +1,8 @@
-import 'package:curreny_exchange/app/themes/app_colors.dart';
-import 'package:curreny_exchange/app/themes/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../../../app/themes/app_colors.dart';
+import '../../../../app/themes/app_text.dart';
 import './today_currency_view_model.dart';
 
 class TodayCurrencyView extends StatelessWidget {

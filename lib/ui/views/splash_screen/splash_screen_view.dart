@@ -1,7 +1,7 @@
-import 'package:curreny_exchange/app/themes/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../../app/themes/app_text.dart';
 import './splash_screen_view_model.dart';
 
 class SplashScreenView extends StatelessWidget {

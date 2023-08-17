@@ -1,9 +1,9 @@
-import 'package:curreny_exchange/app/themes/app_colors.dart';
-import 'package:curreny_exchange/ui/widgets/my_textformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
+import '../../../../../app/themes/app_colors.dart';
+import '../../../../widgets/my_textformfield.dart';
 import './konversi_dialog_view_model.dart';
 
 class KonversiDialogView extends StatelessWidget {
